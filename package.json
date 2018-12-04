@@ -1,0 +1,15 @@
+{
+  "name": "iotdevicesimulator",
+  "version": "1.0.0",
+  "description": "Simulate internet connected device for sending data to AWS IoT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "muthu kumaran",
+  "license": "ISC",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.1",
+    "aws-sdk": "^2.364.0"
+  }
+}
