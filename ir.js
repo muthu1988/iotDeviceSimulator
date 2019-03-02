@@ -1,5 +1,5 @@
 var Gpio = require('onoff').Gpio;
-var sensorOne = new Gpio(2, 'in');
+var sensorOne = new Gpio(2, 'in', 'both');
 
 sensorOne.watch(function (err, value) {
     if (err) {
@@ -7,9 +7,9 @@ sensorOne.watch(function (err, value) {
     return;
     }
     if(value)
-        console.log('something sensed:'+value);
+        console.log('vehicle not parked');
     else
-        console.log('nothing sensed:'+value);
+        console.log('vehicle parked');
   });
   
 //function to run when exiting program
