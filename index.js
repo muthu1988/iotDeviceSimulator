@@ -17,18 +17,22 @@ var device = awsIot.device({
 // Connect
 device.on('connect', function () {
   console.log('Connected');
-  // Subscribe to myTopic
-  device.subscribe("myTopic");
-  // Publish to myTopic
-  device.publish("myTopic", JSON.stringify({ message: 'hello' }));
+  // Subscribe to altimetrikParking
+  device.subscribe("altimetrikParking");
+  // Uncomment to test
+  // device.publish("altimetrikParking", JSON.stringify({ id: 1, zone_id: 1, isbooked: 1 }));
 });
 
-// Receiving a message from any topic that this device is subscribed to.
-device.on('message', function (topic, payload) {
-  console.log('message', topic, payload.toString());
-});
+var sendData = function (data) {
+  // Publish to myTopic
+  device.publish("altimetrikParking", JSON.stringify(data));
+}
 
 // Error
 device.on('error', function (error) {
   console.log('Error: ', error);
 });
+
+module.exports = {
+  sendData
+}
